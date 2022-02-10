@@ -13,4 +13,10 @@ Route::get('/', function () {
         ],
     ];
     return view('home',$data);
-});
+})-> name('home');
+Route::get('/contacts', function () {
+    return view('contacts');
+})-> name('contacts');
+Route::get('/info', function () {
+    return view('info');
+})-> name('info');

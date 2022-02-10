@@ -12,6 +12,17 @@
     {{ $name }} {{ $lastname }}
   </h1>
   
+  <nav>
+    <ul>
+      <li>
+        <a href="{{route('contacts')}}">Contacts</a>
+      </li>
+      <li>
+        <a href="{{route('info')}}">Info</a>
+      </li>
+    </ul>
+  </nav>
+
   {{-- stampa delle informazioni dell'utente --}}
   <ul>
   @forelse ($info as $index => $date)
@@ -19,6 +30,7 @@
     {{$index}}: {{$date}}
   </li>
   @empty
+  {{-- entra qua dentro solo se $info risulta essere empty --}}
       Nessuna informazione disponibile
   @endforelse
   </ul>
