@@ -6,16 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Info</title>
 </head>
+<body>
     {{-- stampa delle informazioni dell'utente --}}
   <ul>
-  @forelse ($info as $index => $date)
-  <li>
-    {{$index}}: {{$date}}
-  </li>
-  @empty
-  {{-- entra qua dentro solo se $info risulta essere empty --}}
-      Nessuna informazione disponibile
-  @endforelse
+    @forelse ($info as $index => $date)
+      <li>
+        {{$index}}: {{$date}}
+      </li>
+      @empty
+      {{-- entra qua dentro solo se $info risulta essere empty --}}
+          Nessuna informazione disponibile
+    @endforelse
   </ul>
   <a href="{{route('home')}}">Back to home ...</a>
 </body>
