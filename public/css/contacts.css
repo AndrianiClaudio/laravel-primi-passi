@@ -1,0 +1,13 @@
+li {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  
+}
+
+a,
+a:visited,
+a:hover {
+  color: red;
+  text-decoration: none;
+}
