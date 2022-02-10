@@ -7,6 +7,20 @@
   <title>Home</title>
 </head>
 <body>
-  Ciaoooo, ti trovi in home.blade.php
+  {{-- stampa di nome e cognome, come titolo --}}
+  <h1>
+    {{ $name }} {{ $lastname }}
+  </h1>
+  
+  {{-- stampa delle informazioni dell'utente --}}
+  <ul>
+  @forelse ($info as $index => $date)
+  <li>
+    {{$index}}: {{$date}}
+  </li>
+  @empty
+      Nessuna informazione disponibile
+  @endforelse
+  </ul>
 </body>
 </html>
