@@ -6,33 +6,35 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Home</title>
 </head>
-<body>
-  {{-- stampa di nome e cognome, come titolo --}}
-  <h1>
-    {{ $name }} {{ $lastname }}
-  </h1>
-  
-  <nav>
-    <ul>
-      <li>
-        <a href="{{route('contacts')}}">Contacts</a>
-      </li>
-      <li>
-        <a href="{{route('info')}}">Info</a>
-      </li>
-    </ul>
-  </nav>
 
-  {{-- stampa delle informazioni dell'utente --}}
-  <ul>
-  @forelse ($info as $index => $date)
-  <li>
-    {{$index}}: {{$date}}
-  </li>
-  @empty
-  {{-- entra qua dentro solo se $info risulta essere empty --}}
-      Nessuna informazione disponibile
-  @endforelse
-  </ul>
+<style>
+header.header {
+  display: flex;
+  justify-content: space-between;
+}
+li {
+  display: inline;
+}
+</style>
+
+<body>
+  <header class="header">
+    {{-- stampa di nome e cognome, come titolo --}}
+    <div class="title">
+      <h1>
+        {{ $name }} {{ $lastname }}
+      </h1>  
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="{{route('contacts')}}">Contacts</a>
+        </li>
+        <li>
+          <a href="{{route('info')}}">Info</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </body>
 </html>
